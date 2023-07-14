@@ -45,7 +45,7 @@ const params = reactive({
   imgDpi: 150,
   pageNo: -1,
   alertType: 'info',
-  alertContent: '已停止',
+  alertContent: '已停止!',
 })
 
 const handleCompressClick = async() => {
@@ -75,7 +75,7 @@ onUnmounted(() => {
 
 </script>
 
-<style scoped>
+<style>
 .el-alert {
   padding: 0 5px;
 }
@@ -93,10 +93,11 @@ onUnmounted(() => {
   margin: 0;
 }
 
-.el-alert__content {
+.el-alert__content .el-alert__title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  word-break: keep-all;
 }
 
 ol {

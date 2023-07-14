@@ -5,6 +5,24 @@
   "author": "Damon",
   "main": "main.js",
   "description": "PDF Compressor",
+  "build": {
+    "extraResources": [
+      "./cmds/**"
+    ]
+  },
+  "config":{
+    "forge": {
+      "ignore":[
+        "node_modules/**"
+      ],
+      "makers": [
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": ["darwin"]
+        }
+      ]
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
@@ -15,6 +33,7 @@
     "make": "electron-forge make"
   },
   "dependencies": {
+    "asar": "^3.2.0",
     "electron-squirrel-startup": "^1.0.0",
     "element-plus": "^2.3.7",
     "vue": "^3.2.47"
